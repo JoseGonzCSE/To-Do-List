@@ -3,28 +3,32 @@ from django.views.generic.edit import CreateView, UpdateView,DeleteView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.urls import reverse_lazy
+
 from django.contrib.auth.views import LoginView
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import Task
 
-class TaskList(ListView):
+class TaskList(LoginRequiredMixin,ListView):
     model=Task     
     context_object_name="Tasks"
 
-class DetailTask(DetailView):
+class DetailTask(LoginRequiredMixin,DetailView):
     model=Task
     context_object_name="Detail"
 
-class TaskCreate(CreateView):
+class TaskCreate(LoginRequiredMixin,CreateView):
     model= Task
     fields='__all__'
     success_url=reverse_lazy('Tasks')
 
-class TaskUpdate(UpdateView):
+class TaskUpdate(LoginRequiredMixin,UpdateView):
     model=Task
     fields='__all__'
     success_url=reverse_lazy('Tasks')
 
-class TaskDelete(DeleteView):
+class TaskDelete(LoginRequiredMixin,DeleteView):
     model=Task
     context_object_name="Tasks"
     success_url=reverse_lazy('Tasks')
