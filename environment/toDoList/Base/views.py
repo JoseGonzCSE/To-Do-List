@@ -1,3 +1,6 @@
+from typing import Any
+from django.forms.models import BaseModelForm
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView,DeleteView
 from django.views.generic.list import ListView
@@ -14,18 +17,30 @@ class TaskList(LoginRequiredMixin,ListView):
     model=Task     
     context_object_name="Tasks"
 
+    def get_context_data(self, **kwargs: Any):
+        context=super().get_context_data(**kwargs)
+        context['Tasks']=context['Tasks'].filter(user=self.request.user)
+        context['Count']=context['Tasks'].filter(complete=False).count()
+
+        return context
+
 class DetailTask(LoginRequiredMixin,DetailView):
     model=Task
     context_object_name="Detail"
 
 class TaskCreate(LoginRequiredMixin,CreateView):
     model= Task
-    fields='__all__'
+    fields=['title','description','complete']
     success_url=reverse_lazy('Tasks')
+
+    def form_valid(self, form): 
+        form.instance.user=self.request.user
+        return super(TaskCreate,self).form_valid(form)
+        
 
 class TaskUpdate(LoginRequiredMixin,UpdateView):
     model=Task
-    fields='__all__'
+    fields=['title','description','complete']
     success_url=reverse_lazy('Tasks')
 
 class TaskDelete(LoginRequiredMixin,DeleteView):
