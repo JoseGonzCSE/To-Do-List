@@ -6,16 +6,16 @@
         <h1>Nice to see you {{request.user|title}}!</h1>
         <h3> <i>{{Count}}</i> Task{{Count|pluralize}} left!</h3>
     </div>
+    {%if request.user.is_authenticated%}
+    <a href="{%url 'Logout'%}">Logout</a>
+    {%else%}
+    <a href="{%url 'Login'%}">Login</a>
+    {%endif%}
 </div>
 
 
 
-{%if request.user.is_authenticated%}
-    <p>{{request.user}}</p>
-    <a href="{%url 'Logout'%}">Logout</a>
-{%else%}
-    <a href="{%url 'Login'%}">Login</a>
-{%endif%}
+
 
 <hr>
 <h1> To Do List</h1>
