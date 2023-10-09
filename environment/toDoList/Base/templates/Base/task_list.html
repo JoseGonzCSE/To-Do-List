@@ -1,3 +1,14 @@
+{%extends 'Base/main.html'%}
+{%block content%}
+
+<div class="header">
+    <div>
+        <h1>Nice to see you {{request.user|title}}!</h1>
+        <h3> <i>{{Count}}</i> Task{{Count|pluralize}} left!</h3>
+    </div>
+</div>
+
+
 
 {%if request.user.is_authenticated%}
     <p>{{request.user}}</p>
@@ -19,13 +30,12 @@
 
 <table>
     <tr>
-        <th>Item</th>
+        <th>Items</th>
         <th></th>
     </tr>
     {% for task in Tasks%}
     <tr>
         <td>{{task.title}}</td>
-        <td><a href="{%url 'Detail' task.id%}">View</a></td>
         <td><a href="{%url 'Update' task.id%}">Edit</a></td>
         <td><a href="{%url 'Delete' task.id%}">Delete</a></td>
     </tr>
@@ -34,3 +44,5 @@
     {%endfor%}
 
 </table>
+{%endblock content%}
+
