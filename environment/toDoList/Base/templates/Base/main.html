@@ -18,6 +18,8 @@
             font-family: 'Love Ya Like A Sister', cursive;
             background-color: #FFF3DA;
             
+            
+            
         }
 
         body::before{
@@ -55,10 +57,67 @@
         }
         .header a {
             text-decoration: none;
-            color: #fff;
+            color: #FFF3DA;
             
         }
         
+        .taskTitle{
+            display: flex;
+        }
+
+        .taskTitle a{
+            text-decoration: none;
+            margin-left: 10px;
+            
+        }
+
+        .taskWrapper{
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .taskComplete,.taskInComplete{
+            position: relative;
+            padding-left: 20px;
+            cursor: pointer;
+
+        }
+        .taskComplete::before{
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid #5e547e;
+            background-color: #D0BFFF;
+            text-align: center;
+            line-height: 20px;
+            color: #FFF3DA;
+            height: 20px;
+            width: 20px;
+        }
+        .taskComplete.checked::before{
+            color: #FFF3DA;
+        }
+        .taskInComplete::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid #5e547e;
+            background-color: #D0BFFF;
+            height: 20px;
+            width: 20px;
+        }
+
+        #searchAddWrapper{
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            justify-content: space-between;
+        }
+
         
     </style>
 
