@@ -63,6 +63,7 @@
         
         .taskTitle{
             display: flex;
+            text-decoration: none;
         }
 
         .taskTitle a{
@@ -76,6 +77,7 @@
             padding: 20px;
             justify-content: space-between;
             align-items: center;
+            text-decoration: none;
 
         }
         .taskComplete,.taskInComplete{
@@ -96,6 +98,7 @@
             color: #FFF3DA;
             height: 20px;
             width: 20px;
+            text-decoration: none;
         }
         .taskComplete.checked::before{
             color: #FFF3DA;
@@ -109,6 +112,7 @@
             background-color: #D0BFFF;
             height: 20px;
             width: 20px;
+            text-decoration: none;
         }
 
         #searchAddWrapper{
@@ -118,6 +122,29 @@
             justify-content: space-between;
         }
 
+        input[type=text],input[type=password],textarea{
+            padding: 10px;
+            border-radius: 15px;
+            border: 1px solid #D0BFFF;
+            
+        }
+        label{
+            display: block;
+            padding-top: 10px !important;
+        }
+        .button{
+            padding: 10px;
+            font-size: small;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid #5e547e;
+            background-color:#D0BFFF ;
+            color:#5e547e ;
+            border-radius: 15px;
+        }
+        .addTaskBody{
+            padding: 20px;
+        }
         
     </style>
 

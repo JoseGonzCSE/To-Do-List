@@ -1,11 +1,20 @@
 {%extends 'Base/main.html'%}
 {%block content%}
-<h1>Creating An Account</h1>
+<div class="header">
+    <h1>Creating An Account</h1>
+</div>
+
 
 <form method="post">
     {%csrf_token%}
-    {{form.as_p}}
-    <input type="submit" value="Create Account">
+    <label>{{form.username.label}}</label>
+    {{form.username}}
+    <label>{{form.password1.label}}</label>
+    {{form.password1}}
+    <label>{{form.password2.label}}</label>
+    {{form.password2}}
+    
+    <input class="button" type="submit" value="Create Account">
 </form>
 
 <p>Looking to Login? <a href="{%url 'Login'%}">LogIn</a></p>

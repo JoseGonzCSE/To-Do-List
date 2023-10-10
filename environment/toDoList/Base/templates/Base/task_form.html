@@ -1,13 +1,28 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 {%extends 'Base/main.html'%}
 {%block content%}
-<h1>What would you like to add?</h1>
-<a href="{% url 'Tasks' %}">Return</a>
 
-<form method="post" action="">
-    {%csrf_token%}
-    {{form.as_p}}
-    <input type="submit" value="Add">
+<div class="header">
+    <h1>What would you like to add?</h1>
+    <a href="{% url 'Tasks' %}">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </a>
+
+</div>
 
 
-</form>
+
+
+<div class="addTaskBody">
+    <form method="post" action="">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input class="button"type="submit" value="Add">
+    
+    </form>
+</div>
+
+
+
 {%endblock content%}
