@@ -1,7 +1,9 @@
 # To-Do-List
 Simple To-do List Using Django
 Personal Project focused on learning to be more familiarized with Databases 
-![To-DoList-Gif](https://github.com/JoseGonzCSE/To-Do-List/assets/116050946/c09894d0-3069-4996-a8ac-6cab23e53e92)
+-I've always been super organized and use toDoList almost everyday. Thought it would be fun to make one of my own!
+-Wanted a cute aesthetics with a kind of sketch like background
+![To-DoList_Demo](https://github.com/JoseGonzCSE/To-Do-List/assets/116050946/39db5d07-f6ae-44de-a49c-6e84c3df5e29)
 ![Log-In](https://github.com/JoseGonzCSE/To-Do-List/assets/116050946/baedf842-6085-4806-914b-33e2661e0a33)
 ![CreateAccount](https://github.com/JoseGonzCSE/To-Do-List/assets/116050946/9b380d33-ec25-490d-bfbe-78c190c29a92)
 ![MainPage](https://github.com/JoseGonzCSE/To-Do-List/assets/116050946/2c0ff6b7-db42-4f6d-8b8b-f28abb3bad1e)
